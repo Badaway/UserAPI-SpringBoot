@@ -29,4 +29,15 @@ public class UserController {
         return userService.getUser(userId);
 
     }
+
+    @GetMapping ("/users")
+    public ResponseEntity<Object> getUsers(){
+        return userService.getAllUsers();
+
+    }
+    @GetMapping ("{userId}/products")
+    public ResponseEntity<Object> getProductsByUserId(@PathVariable int userId){
+        return userService.getProductsByUser(userId);
+
+    }
 }
